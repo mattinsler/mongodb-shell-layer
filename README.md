@@ -1,6 +1,6 @@
 # mongodb-shell-layer
 
-Plugin to enable mongodb shell using your layer-cake configuration
+layer-cake plugin to open a mongodb shell using your layer-cake configuration
 
 ## Installation
 

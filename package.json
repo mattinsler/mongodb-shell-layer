@@ -1,6 +1,6 @@
 {
   "name": "mongodb-shell-layer",
-  "description": "",
+  "description": "layer-cake plugin to open a mongodb shell using your layer-cake configuration",
   "version": "0.0.1",
   "homepage": "https://github.com/mattinsler/mongodb-shell-layer",
   "author": {
