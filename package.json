@@ -1,0 +1,36 @@
+{
+  "name": "mongodb-shell-layer",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mattinsler/mongodb-shell-layer",
+  "author": {
+    "name": "Matt Insler",
+    "email": "matt.insler@gmail.com",
+    "url": "http://www.mattinsler.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattinsler/mongodb-shell-layer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mattinsler/mongodb-shell-layer/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mattinsler/mongodb-shell-layer/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "dist/mongodb-shell-layer",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {
+    "betturl": "0.2.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.15",
+    "grunt-contrib": "~0.3.0"
+  },
+  "keywords": ["layer-cake", "mongodb"]
+}
