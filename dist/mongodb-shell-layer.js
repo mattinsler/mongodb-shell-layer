@@ -18,7 +18,7 @@
       connection = null;
     }
     return this.execute('init', function() {
-      var command, config, parsed, proc, _ref, _ref1;
+      var command, config, host, parsed, port, proc, _ref, _ref1;
       config = _this.config.mongodb;
       if (config == null) {
         return callback(new Error('To access the mongodb shell, you must have a mongodb configuration'));
@@ -30,11 +30,13 @@
         }
       }
       parsed = betturl.parse(config.url);
+      host = parsed.hosts[0].host;
+      port = parsed.hosts[0].port;
       command = 'mongo';
       if ((((_ref = parsed.auth) != null ? _ref.user : void 0) != null) && (((_ref1 = parsed.auth) != null ? _ref1.password : void 0) != null)) {
         command += " -u " + parsed.auth.user + " -p " + parsed.auth.password;
       }
-      command += (" " + parsed.host) + (parsed.port != null ? ':' + parsed.port : '') + (parsed.path || '');
+      command += (" " + host) + (port != null ? ':' + port : '') + (parsed.path || '');
       switch (require('os').type()) {
         case 'Darwin':
           command = 'script -q /dev/null ' + command;

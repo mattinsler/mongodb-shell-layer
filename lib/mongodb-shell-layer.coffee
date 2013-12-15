@@ -21,10 +21,12 @@ mongodb_shell = (connection, callback) ->
       return callback(new Error('Could not find the ' + connection + ' connection in your mongodb configuration')) unless config?
     
     parsed = betturl.parse(config.url)
+    host = parsed.hosts[0].host
+    port = parsed.hosts[0].port
     
     command = 'mongo'
     command += " -u #{parsed.auth.user} -p #{parsed.auth.password}" if parsed.auth?.user? and parsed.auth?.password?
-    command += " #{parsed.host}" + (if parsed.port? then ':' + parsed.port else '') + (parsed.path or '')
+    command += " #{host}" + (if port? then ':' + port else '') + (parsed.path or '')
     
     switch require('os').type()
       when 'Darwin' then command = 'script -q /dev/null ' + command
